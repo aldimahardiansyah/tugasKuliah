@@ -1,0 +1,6 @@
+REK745, Budi, 400000
+REK544, Ayah Budi, 600000
+REK891, Ibu Budi, 150000
+REK014, Kakak Budi, 450000
+REK407, Adik Budi, 200000
+REK013, Paman Budi, 450000

@@ -1,0 +1,10 @@
+101 Teddy-Bear
+102 Kelereng
+201 Laptop
+202 Smartphone
+203 Speaker
+301 Avanza
+302 Supra-X
+401 Topi
+402 Jaket
+403 Scarf
