@@ -45,6 +45,14 @@
     </style>
 </head>
 
+<?php
+$barang1 = ['nama' => 'TV', 'harga' => 4200000];
+$barang2 = ['nama' => 'Kulkas', 'harga' => 3100000];
+$barang3 = ['nama' => 'Mesin Cuci', 'harga' => 3800000];
+$barang = [$barang1, $barang2, $barang3];
+
+?>
+
 <body>
     <form class="form-horizontal" method="POST" action="form_belanja.php">
         <fieldset>
@@ -100,12 +108,21 @@
 
         </fieldset>
     </form>
+    <?php
+    function rupiah($angka)
+    {
+        $hasil_rupiah = number_format($angka, 2, ',', '.');
+        return $hasil_rupiah;
+    }
+    ?>
 
     <ul>
         <li class="bg-primary">Daftar Harga</li>
-        <li>TV: 4.200.000</li>
-        <li>Kulkas: 3.100.000</li>
-        <li>Mesin Cuci: 3.800.000</li>
+        <?php
+        foreach ($barang as $brg) {
+            echo '<li>' . $brg['nama'] . ': ' . rupiah($brg['harga']) . '</li>';
+        }
+        ?>
         <li class="bg-primary">Harga Dapat Berubah Setiap Saat</li>
     </ul>
 
@@ -122,5 +139,13 @@ if (isset($_POST['proses'])) {
     echo 'Nama Costumer: ' . $nama . '<br/>';
     echo 'Produk Pilihan: ' . $produk . '<br/>';
     echo 'Jumlah Beli: ' . $jumlah . '<br/>';
-    echo 'Total Belanja: ';
+    if ($produk == 'TV') {
+        $produk = $barang1;
+    } else if ($produk == 'Kulkas') {
+        $produk = $barang2;
+    } else {
+        $produk = $barang3;
+    }
+    echo 'Total Belanja: ' . 'Rp. ' . rupiah($produk['harga'] * $jumlah) . ',-';
 }
+?>
