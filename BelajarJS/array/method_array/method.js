@@ -2,7 +2,7 @@
 let arr = [];
 
 // menambahkan elemen array
-arr.push('Aldi', true, 18);
+arr.push('Aldi', true, 18, 'Bogor');
 
 // menghapus elemen terakhir array
 arr.pop();
