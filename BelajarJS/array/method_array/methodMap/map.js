@@ -10,3 +10,9 @@ let hasilArr = arr.map(function (elemen) {
 console.log(hasilArr.sort(function (a, b) {
     return a - b;
 }));
+
+// mencari elemen array dengan filter
+let cari = arr.filter(function (elemen) {
+    return elemen > 8;
+});
+console.log(cari);
