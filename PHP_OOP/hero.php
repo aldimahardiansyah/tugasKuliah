@@ -1,17 +1,5 @@
 <?php
-class lord
-{
-    // properti atau atribut
-    public $damage = 500;
-    public $defense = 2000;
-    public $name = 'Lord';
-
-    // method
-    public function get_damage()
-    {
-        return $this->damage;
-    }
-}
+require_once('lord.php');
 
 // inheritance (pewarisan)
 class hero extends lord
@@ -29,5 +17,11 @@ class hero extends lord
     function set_damage($damage)
     {
         $this->damage = $damage;
+    }
+
+    // overriding
+    public function get_damage()
+    {
+        return 'Damage hero: ' . $this->damage;
     }
 }

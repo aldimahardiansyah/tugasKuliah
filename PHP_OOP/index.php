@@ -6,10 +6,13 @@ $lord = new lord();
 $hero1 = new hero('Alucard', 'Fighter', 210, 60);
 $hero2 = new hero('Miya', 'Marksman', 240, 20);
 
-// mencetak damage lord
-echo 'Damage Lord: ' . $lord->damage;
+// mencetak damage lord (parent)
+echo '<u>PARENT: </u><br/>';
+echo '<br/>Damage Lord: ' . $lord->damage;
 echo '<hr/>';
 
+// mencetak child
+echo '<u>CHILD:</u><br/>';
 echo '<br/>Nama hero: ' . $hero1->name;
 echo '<br/> Damage: ' . $hero1->damage;
 
@@ -17,4 +20,4 @@ echo '<br/> Damage: ' . $hero1->damage;
 $hero1->set_damage(420);
 
 echo "<br/>";
-echo 'Damage setelah diubah: ' . $hero1->damage;
+echo 'Damage setelah diubah: ' . $hero1->get_damage();
