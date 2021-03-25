@@ -17,11 +17,12 @@ class hero extends lord
     function set_damage($damage)
     {
         $this->damage = $damage;
+        return $this;
     }
 
     // overriding
     public function get_damage()
     {
-        return 'Damage hero: ' . $this->damage;
+        echo 'Damage hero: ' . $this->damage;
     }
 }

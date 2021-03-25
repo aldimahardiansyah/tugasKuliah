@@ -21,3 +21,9 @@ $hero1->set_damage(420);
 
 echo "<br/>";
 echo 'Damage setelah diubah: ' . $hero1->get_damage();
+echo '<br/>';
+
+echo '<br/>Nama hero: ' . $hero2->name . '<br/>';
+
+// menggunakan konsep method chaining
+$hero2->set_damage(520)->get_damage();
