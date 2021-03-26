@@ -1,6 +1,8 @@
 <?php
 class bogor
 {
+    // mendeklarasikan variabel static
+    public static $sebutan = 'Kota hujan';
 
     // mendeklaraikan method static
     public static function teks()
@@ -9,5 +11,6 @@ class bogor
     }
 }
 
-// memanggil method static dalam class tanpa memuat objek
+// memanggil method dan variabel static dalam class tanpa membuat objek
 bogor::teks();
+echo '<br/>' . bogor::$sebutan;
