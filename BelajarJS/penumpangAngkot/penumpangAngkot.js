@@ -1,4 +1,4 @@
-let penumpang = [];
+var penumpang = [];
 
 let tambahPenumpang = function (nama, penumpang) {
     if (penumpang == '') {
@@ -6,19 +6,26 @@ let tambahPenumpang = function (nama, penumpang) {
     }
 
     else {
-        for (let i = 0; i < penumpang.length; i++) {
-            if (penumpang[i] == undefined) {
-                penumpang.splice(i);
-                break;
+        let tambahkan = true;
+        let telusur = penumpang.map(function (e) {
+            switch (e) {
+                case undefined:
+                    penumpang.splice(nama);
+                    tambahkan = false;
+                    break;
+                case nama:
+                    console.log('Penumpang ' + nama + ' sudah ada di dalam angkot!');
+                    tambahkan = false;
+                    break;
+                default:
+                    tambahkan = true;
+                    break;
             }
-            else if (penumpang[i] == nama) {
-                console.log('Penumpang ' + penumpang[i] + ' sudah ada di dalam angkot!');
-                break;
-            }
-            else {
-                penumpang.push(nama);
-                break;
-            }
+        });
+
+        if (tambahkan == true) {
+            penumpang.push(nama);
+            return penumpang;
         }
     }
 }
