@@ -1,4 +1,4 @@
-var penumpang = [];
+var penumpang = [undefined, 'lisk'];
 
 let tambahPenumpang = function (nama, penumpang) {
     if (penumpang == '') {
@@ -6,12 +6,11 @@ let tambahPenumpang = function (nama, penumpang) {
     }
 
     else {
-        let tambahkan = true;
+        let tambahkan = false;
         let telusur = penumpang.map(function (e) {
             switch (e) {
                 case undefined:
-                    penumpang.splice(nama);
-                    tambahkan = false;
+                    e = nama;
                     break;
                 case nama:
                     console.log('Penumpang ' + nama + ' sudah ada di dalam angkot!');
@@ -26,6 +25,23 @@ let tambahPenumpang = function (nama, penumpang) {
         if (tambahkan == true) {
             penumpang.push(nama);
             return penumpang;
+        }
+    }
+}
+
+let hapusPenumpang = function (nama, penumpang) {
+    if (penumpang == '') {
+        console.log('Penumpang dalam angkot kosong!');
+    }
+    else {
+        for (let j = 0; j < penumpang.length; j++) {
+            if (penumpang[j] == nama) {
+                penumpang[j] = undefined;
+                return penumpang;
+            }
+            else {
+                console.log(nama + ' tidak ada dalam angkot!');
+            }
         }
     }
 }
