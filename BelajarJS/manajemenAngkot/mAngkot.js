@@ -13,7 +13,7 @@ class Angkot {
 
     penumpangTurun = function (namaPenumpang, bayar) {
 
-        if (this.penumpang.length == 0) {
+        if (this.penumpang.length === 0) {
             alert('Penumpang kosong');
             return false;
         }
@@ -35,4 +35,4 @@ class Angkot {
     }
 }
 
-let angkot1 = new Angkot('Aldi', 'Cicaheum - Cibiru', '0', [])
+let angkot1 = new Angkot('Aldi', ['Cicaheum', 'Cibiru'], '0', [])
