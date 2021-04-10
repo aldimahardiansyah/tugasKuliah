@@ -19,14 +19,20 @@
 
 // console.log(evanNumber);
 
-// map
-const priceInJPY = 5000;
-let currency = new Map([
-    ["USD", 14000],
-    ["JPY", 131],
-    ["SGD", 11000],
-    ["MYR", 3500]
-]);
-const priceInIDR = priceInJPY * currency.get("JPY");
+// // map
+// const priceInJPY = 5000;
+// let currency = new Map([
+//     ["USD", 14000],
+//     ["JPY", 131],
+//     ["SGD", 11000],
+//     ["MYR", 3500]
+// ]);
+// const priceInIDR = priceInJPY * currency.get("JPY");
 
-console.log(priceInIDR);
+// console.log(priceInIDR);
+
+// arrow function
+const sayName = (nama) => {
+    console.log(`Halo, nama saya ${nama}.`)
+}
+sayName('Aldi');
