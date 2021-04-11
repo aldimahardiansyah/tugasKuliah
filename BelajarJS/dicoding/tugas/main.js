@@ -37,15 +37,18 @@
 // }
 // sayName('Aldi');
 
-// closure
-function init() {
-    var name = 'Obi Wan';   // Variabel lokal di dalam scope fungsi init
+// // closure
+// function init() {
+//     var name = 'Obi Wan';   // Variabel lokal di dalam scope fungsi init
 
-    function greet() {      // Inner function, merupakan contoh closure
-        console.log(`Halo, ${name}`);   // Memanggil variabel yang dideklarasikan di parent function
-    }
+//     function greet() {      // Inner function, merupakan contoh closure
+//         console.log(`Halo, ${name}`);   // Memanggil variabel yang dideklarasikan di parent function
+//     }
 
-    greet();
-}
+//     greet();
+// }
 
-init();
+// init();
+
+// fungsi yang mengembalikan nilai terkecil
+const minimal = (a, b) => (a < b || a === b) ? a : b;
