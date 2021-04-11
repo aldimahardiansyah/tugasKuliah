@@ -31,8 +31,21 @@
 
 // console.log(priceInIDR);
 
-// arrow function
-const sayName = (nama) => {
-    console.log(`Halo, nama saya ${nama}.`)
+// // arrow function
+// const sayName = (nama) => {
+//     console.log(`Halo, nama saya ${nama}.`)
+// }
+// sayName('Aldi');
+
+// closure
+function init() {
+    var name = 'Obi Wan';   // Variabel lokal di dalam scope fungsi init
+
+    function greet() {      // Inner function, merupakan contoh closure
+        console.log(`Halo, ${name}`);   // Memanggil variabel yang dideklarasikan di parent function
+    }
+
+    greet();
 }
-sayName('Aldi');
+
+init();
