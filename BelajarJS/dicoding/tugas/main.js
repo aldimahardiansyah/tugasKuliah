@@ -54,10 +54,5 @@
 const minimal = (a, b) => (a < b || a === b) ? a : b;
 
 // funsi yang mengembalikan a * a sebanyak b kali
-const power = (a, b) => {
-    let hasil = 1;
-    for (let i = 1; i <= b; i++) {
-        hasil *= a;
-    }
-    return hasil;
-}
+const power = (a, b) => a ** b;
+console.log(power(7, 3));
