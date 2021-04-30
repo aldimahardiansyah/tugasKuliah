@@ -4,6 +4,6 @@ class Bmi extends CI_Controller
 {
     public function index()
     {
-        $this->load->model('pasien_model')
+        $this->load->model('pasien_model');
     }
 }
