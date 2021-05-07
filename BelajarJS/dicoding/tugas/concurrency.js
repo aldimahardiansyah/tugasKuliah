@@ -48,7 +48,6 @@ const fetchingUserFromInternet = (isOffline) => {
         }, 1000)
     })
 };
-//console.log(fetchingUserFromInternet('false').then((value)=>{console.log(value)}))
 
 // TODO: 2
 
