@@ -4,6 +4,7 @@ class Pasien extends CI_Controller
 {
     public function list()
     {
-        $this->load->model('Bmi_pasien');
+        $this->load->model('bmi_pasien');
+        $data['pasien'] = $this->bmi_pasien->getAll();
     }
 }
