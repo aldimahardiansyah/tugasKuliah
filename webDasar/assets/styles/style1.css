@@ -63,6 +63,8 @@ nav li{
 nav{
     background-color: #00a2c6;
     padding: 5px;
+    position: sticky;
+    top: 0;
 }
 main{
     padding: 20px;
@@ -82,4 +84,7 @@ aside{
         width: 100%;
         padding: 0;
     }
+}
+header{
+    display: inline;
 }
