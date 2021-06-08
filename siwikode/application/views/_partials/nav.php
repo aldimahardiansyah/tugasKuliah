@@ -9,7 +9,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?= base_url('index.php') ?>">Home </a>
                 </li>
-                <li class="nav-item <?php if(base_url('index.php/rekreasi')){echo 'active';} ?>">
+                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('index.php/rekreasi') ?>">Wisata Rekreasi</a>
                 </li>
                 <li class="nav-item">
@@ -29,7 +29,7 @@
                     <a class="nav-link" href="admin.html">Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="kelompok.html">Kelompok</a>
+                    <a class="nav-link" href="<?= base_url('index.php/kelompok') ?>">Kelompok</a>
                 </li>
                 <!-- <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Cari Wisata" aria-label="Search">

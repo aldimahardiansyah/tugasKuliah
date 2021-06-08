@@ -1,7 +1,7 @@
     <!-- Breadcrumb -->
     <div aria-label="breadcrumb" class="breadcrumb d-flex justify-content-end p-1">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('index.php') ?>">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Wisata Rekreasi</li>
         </ol>
     </div>
@@ -13,7 +13,7 @@
             <h5 class="card-title">MASJID KUBAH EMAS </h5>
             <div class="row no-gutters">
                 <div class="col-md-2 card-body">
-                    <img src="assets/img/sd.jpg" class="card-img" alt="">
+                    <img src="<?= base_url('public/assets/') ?>img/sd.jpg" class="card-img" alt="">
                 </div>
 
                 <div class="col-md-10">
