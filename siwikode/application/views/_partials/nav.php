@@ -10,7 +10,7 @@
                     <a class="nav-link" href="<?= base_url('index.php') ?>">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('index.php/rekreasi') ?>">Wisata Rekreasi</a>
+                    <a class="nav-link" href="<?= base_url('index.php/wisata/index/rekreasi') ?>">Wisata Rekreasi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kuliner.php">Wisata Kuliner</a>
