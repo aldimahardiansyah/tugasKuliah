@@ -21,7 +21,7 @@
                         Registrasi
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="form_rekreasi.html">Registrasi wisata rekreasi</a>
+                        <a class="dropdown-item" href="<?= base_url('index.php/wisata/create') ?>">Registrasi wisata rekreasi</a>
                         <a class="dropdown-item" href="form_kuliner.html">Rekreasi wisata kuliner</a>
                     </div>
                 </li>
