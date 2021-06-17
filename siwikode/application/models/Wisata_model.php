@@ -16,6 +16,6 @@ class Wisata_model extends CI_Model {
     }
 
     public function query($query){
-        return $this->db->query($query)->row();
+        return $this->db->query($query)->result_array();
     }
 }

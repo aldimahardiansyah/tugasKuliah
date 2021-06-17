@@ -1,4 +1,49 @@
-  <!-- Breadcrumb -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        // variabel global marker
+        var marker;
+
+        function taruhMarker(peta, posisiTitik) {
+
+            if (marker) {
+                // pindahkan marker
+                marker.setPosition(posisiTitik);
+            } else {
+                // buat marker baru
+                marker = new google.maps.Marker({
+                    position: posisiTitik,
+                    map: peta
+                });
+            }
+
+            // isi nilai koordinat ke form
+            document.getElementById("lat").value = posisiTitik.lat();
+            document.getElementById("lng").value = posisiTitik.lng();
+
+        }
+
+        function initialize() {
+            var propertiPeta = {
+                center: new google.maps.LatLng(-6.404511399733215, 106.79917327104017),
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+
+            // even listner ketika peta diklik
+            google.maps.event.addListener(peta, 'click', function (event) {
+                taruhMarker(this, event.latLng);
+            });
+
+        }
+
+
+        // event jendela di-load  
+        google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+
+<!-- Breadcrumb -->
   <div aria-label="breadcrumb" class="breadcrumb d-flex justify-content-end p-1">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -16,7 +61,7 @@
 
           <?php  
             if (isset($error)){
-              echo '<div class="p-3 mb-2 bg-danger text-white"> Error:'.$error. '</div>';
+              echo '<div class="p-3 mb-2 bg-danger text-white"> Error (gambar '.$i.') :'.$error. '</div>';
             }
           ?>
 
@@ -68,20 +113,6 @@
               </div>
 
               <div class="form-group row">
-                <label for="hp" class="col-4 col-form-label">No HP/Telpon</label>
-                <div class="col-8">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fa fa-telegram"></i>
-                      </div>
-                    </div>
-                    <input id="hp" name="hp" placeholder="No HP" type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group row">
                 <label for="email" class="col-4 col-form-label">Email</label>
                 <div class="col-8">
                   <div class="input-group">
@@ -108,7 +139,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-group row">
                 <label for="alamat" class="col-4 col-form-label">Alamat Lengkap</label>
                 <div class="col-8">
@@ -130,12 +161,82 @@
               </div>
 
               <div class="form-group row">
-                <label for="foto" class="col-4 col-form-label">foto Tempat Wisata (1)</label>
+                <label for="foto1" class="col-4 col-form-label">foto Tempat Wisata (1)</label>
                 <div class="col-8">
                   <div class="input-group">
                     <div class="input-group-prepend">
                     </div>
-                    <input id="foto" name="foto" type="file" class="form-control">
+                    <input id="foto1" name="foto1" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="foto2" class="col-4 col-form-label">foto Tempat Wisata (2)</label>
+                <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input id="foto2" name="foto2" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="foto3" class="col-4 col-form-label">foto Tempat Wisata (3)</label>
+                <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input id="foto3" name="foto3" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="foto4" class="col-4 col-form-label">foto Tempat Wisata (4)</label>
+                <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input id="foto4" name="foto4" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="foto5" class="col-4 col-form-label">foto Tempat Wisata (5)</label>
+                <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input id="foto5" name="foto5" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="foto6" class="col-4 col-form-label">foto Tempat Wisata (6)</label>
+                <div class="col-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input id="foto6" name="foto6" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input Lokasi -->
+              
+              <div class="form-group row">
+                <label for="lokasi" class="col-4 col-form-label">Lokasi (latlong)</label>
+                <div class="col-8">
+                  <div id="googleMap" style="width:100%;height:380px;"></div>
+                  <div class="input-group mt-2">
+                    <div class="input-group-prepend">
+                    </div>
+                    <span>Latitude:</span><input type="text" id="lat" name="lat" value="" class="mr-4"> 
+                    <span>Longitude:</span><input type="text" id="lng" name="lng" value="">
                   </div>
                 </div>
               </div>

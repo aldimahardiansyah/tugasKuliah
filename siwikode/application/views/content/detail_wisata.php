@@ -21,18 +21,9 @@
             </div>
             <div class="card-body">
                 <blockquote class="blockquote ml-5 mr-5 mb-0">
-                    <p>
-                        <img src="assets/img/saa.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
-
-                        <img src="assets/img/wiladatika2.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
-
-                        <img src="assets/img/wiladatika3.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
-
-                        <img src="assets/img/wiladatika4.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
-
-                        <img src="assets/img/wiladatika5.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
-
-                        <img src="assets/img/wiladatika6.jpg" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
+                    <p><?php foreach($gambar as $foto){ ?>
+                        <img src="<?= base_url('public/assets/upload/'); echo $foto['nama'] ?>" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
+                    <?php } ?>
                     </p>
                 </blockquote>
             </div>
