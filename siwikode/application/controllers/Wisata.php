@@ -18,7 +18,7 @@ class Wisata extends CI_Controller{
     public function detailWisata($id){
         $this->load->model('wisata_model');
         $wisata = $this->wisata_model->getId('wisata', $id);
-        $gambar = $this->wisata_model->query('SELECT nama FROM gambar WHERE wisata_id='.$id);
+        $gambar = $this->wisata_model->gambar('SELECT nama FROM gambar WHERE wisata_id='.$id);
 
         $data = [ 
             "wisata" => $wisata,
@@ -70,14 +70,12 @@ class Wisata extends CI_Controller{
 
         // upload gambar
         $config['upload_path'] = './public/assets/upload/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_size'] = 2048;
 
         $this->load->library('upload', $config);
-
         for($i=1; $i <= 6; $i++){
             if (!$this->upload->do_upload('foto'.$i)){
-                $this->load->model('wisata_model');
                 $jenis = $this->wisata_model->getAll('jenis_wisata');
     
                 $data = [
@@ -87,17 +85,18 @@ class Wisata extends CI_Controller{
                     'i' => $i
                 ];
                 $this->load->view('_partials/view', $data);
-            break;
+                break;
             }
-
+            else{
                 $this->wisata_model->save('gambar', [
                     'id' => 'default', 
                     'nama' => $this->upload->data()["file_name"], 
                     'wisata_id' => $id
                 ]);
-                redirect('wisata/detailWisata/'.$id);
-                echo $this->upload->data('file_name').'<br>';
-                var_dump($id);
+                if($i==6){
+                    redirect('wisata/detailWisata/'.$id);
+                }
+            }
 
         }
             

@@ -146,19 +146,6 @@
                   <textarea id="alamat" name="alamat" cols="40" rows="3" class="form-control"></textarea>
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="longitude" class="col-4 col-form-label">Longitude</label>
-                <div class="col-8">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fa fa-arrows"></i>
-                      </div>
-                    </div>
-                    <input id="longitude" name="longitude" placeholder="Longitude" type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
 
               <div class="form-group row">
                 <label for="foto1" class="col-4 col-form-label">foto Tempat Wisata (1)</label>

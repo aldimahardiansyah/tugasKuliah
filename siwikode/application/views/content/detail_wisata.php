@@ -8,11 +8,10 @@
     <div class="judul_rekreasi" style="margin-top: -35px;">
         <h1 class="kata">Detail <?php echo $wisata->nama; ?></h1>
         <div class="bintang ml-5">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+            <h5>Rating</h5>
+            <div style="display:flex;">
+                <input id="rating" type="text"/> <span style="font-size: 2em; margin-top:0.2em; margin-left:0.3em;"> <?= $wisata->bintang ?> </span>
+            </div>
         </div>
 
         <div class="card">
@@ -22,7 +21,7 @@
             <div class="card-body">
                 <blockquote class="blockquote ml-5 mr-5 mb-0">
                     <p><?php foreach($gambar as $foto){ ?>
-                        <img src="<?= base_url('public/assets/upload/'); echo $foto['nama'] ?>" width="190px" alt="Gambar Taman Rekreasi Wiladatika">
+                        <img src="<?= base_url('public/assets/upload/'); echo $foto['nama'] ?>" width="190px" alt="gambar <?= $wisata->nama; ?>">
                     <?php } ?>
                     </p>
                 </blockquote>
@@ -48,10 +47,26 @@
                                     <p><?php echo $wisata->alamat ?></p>
                                 </div>
                                 <div>
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416.76908187075156!2d106.78850600785778!3d-6.394250371059102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e93985902917%3A0x70a894ff5e4a3b20!2sRumah%20Makan%20Saung%20Talaga!5e0!3m2!1sen!2ssg!4v1610681856115!5m2!1sen!2ssg"
-                                        width="300" height="200" frameborder="0" style="border:0;" allowfullscreen=""
-                                        aria-hidden="false" tabindex="0"></iframe>
+                                    <!-- Menyisipkan library Google Maps -->
+                                    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+                                    <script>
+                                        // fungsi initialize untuk mempersiapkan peta
+                                        function initialize() {
+                                        var propertiPeta = {
+                                            center:new google.maps.LatLng(<?= $wisata->latitude ?>,<?= $wisata->longitude?>),
+                                            zoom:14,
+                                            mapTypeId:google.maps.MapTypeId.ROADMAP
+                                        };
+    
+                                        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+                                        }
+
+                                        // event jendela di-load  
+                                        google.maps.event.addDomListener(window, 'load', initialize);
+                                    </script>
+
+                                    <div id="googleMap" style="width:300px;height:200px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -87,3 +102,22 @@
         </div>
 
         <br> <br>
+
+        <script src="<?= base_url('public/assets/') ?>js/jquery-3.5.1.js"></script>
+    <script src="<?= base_url('public/assets/') ?>bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('public/Rating/') ?>js/star-rating.js"></script>
+        <script type="text/javascript">
+                $(document).ready(function () {
+                    var $inp = $('#rating');
+
+                    $inp.attr('value', <?= $wisata->bintang ?>);
+
+                    $inp.rating({
+                        min: 0,
+                        max: 5,
+                        step: 1,
+                        size: 'sm',
+                        showClear: false
+                    });
+                });
+            </script>
