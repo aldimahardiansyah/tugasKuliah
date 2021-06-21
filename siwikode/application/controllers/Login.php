@@ -17,22 +17,24 @@ class Login extends CI_Controller{
             'username' => $username,
             'password' => md5($password)
         ];
-        $cek = $this->login_model->cek_login('admin', $where);
+        $cek = $this->login_model->cek_login('user', $where)->num_rows();
         if($cek > 0){
             $data_session = [
                 'nama' => $username,
                 'status' => 'login'
             ];
             $this->session->set_userdata($data_session);
-            redirect(base_url('admin'));
+            redirect(base_url('index.php/admin'));
         }
         else{
-            echo "Username atau password salah!";
+            echo '<script>alert("Username atau password salah!")</script>';
+            $data['content'] = 'content/login';
+            $this->load->view('_partials/view', $data);
         }
     }
 
     function logout(){
         $this->session->sess_destroy();
-        redirect(base_url('login'));
+        redirect(base_url('index.php/login'));
     }
 }

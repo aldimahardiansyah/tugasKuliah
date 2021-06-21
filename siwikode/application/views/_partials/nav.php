@@ -37,6 +37,6 @@
                 </form> -->
 
             </ul>
-            <a href="login.html"><button class="btn btn-outline-light my-2 my-sm-0">Login</button></a>
+            <a href="<?= base_url('index.php/login') ?>"><button class="btn btn-outline-light my-2 my-sm-0">Login</button></a>
         </div>
     </nav>
