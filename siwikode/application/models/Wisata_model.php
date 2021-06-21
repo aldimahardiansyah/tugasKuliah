@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Wisata_model extends CI_Model {
 
     public function getAll($table){
-        return $this->db->get($table)->result_array();
+        return $this->db->get($table)->result_array(); 
     }
 
     public function getId($table, $id){
