@@ -11,19 +11,18 @@
   align-items: center;
   flex-direction: column;
 }
-h4{
+.login-box h4{
   color: #666;
 }
-form{
+.login-box form{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 20px;
 }
-input{
+.login-box form .input{
   padding: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  margin-top: 10px;
   border: none;
   border-radius: 9px;
   place-items: center;
