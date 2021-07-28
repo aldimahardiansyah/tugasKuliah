@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+nav{
+    background-color: #7C83FD;
+    color: #f3f3f3;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    width: 100%;
+    min-height: 4em;
+    padding-left: 1em;
+}
+nav ul{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+nav ul li{
+    display: inline;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 14px;
+    padding: 1em;
+}
+nav ul li a:hover{
+    background-color: #96BAFF;
+}
+.judul-nav{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2em;
+}
+.judul-nav a{
+    text-decoration: none;
+    color: #f3f3f3;
+}
+#content{
+    float: left;
+    width: 73%;
+}
+aside{
+    float: right;
+    width: 25%;
+}
+.rekomendasi-buku, .about{
+    margin: 1em;
+    color: #7C83FD;
+}
+.list-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+.gambar-buku{
+    height: 14em;
+    width: 10em;
+}
+.p-card{
+    box-shadow: 0 3px 8px 0 #999;
+    margin: 0.5em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+.card{
+    box-shadow: 0px 3px 8px 0 #999;
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    border-radius: 0.4em;
+    max-width: 12em;
+    display: flex;
+    flex-direction: column;
+}
+.card a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+.card:hover{
+    background-color: #96BAFF;
+}
+.about-card{
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+}
+.judul-buku{
+    font-size: 0.9em;
+    padding: 0.5em;
+    text-align: center;
+}
+.penulis{
+    font-size: 0.8em;
+    color: #3a3a3a;
+    text-align: center;
+}
+.my-picture{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 150px;
+    width: 10em;
+}
+footer{
+    background-color: #7C83FD;
+    clear: both;
+    color: #f3f3f3;
+    padding: 1em;
+    text-align: center;
+}
+th{
+    padding: 0.2em;
+    padding-right: 0.5em;
+}
+@media screen and (max-width: 1000px){
+    #content, aside{
+        width: 100%;
+    }
+}
